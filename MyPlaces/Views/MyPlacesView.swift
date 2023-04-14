@@ -7,11 +7,12 @@
 
 import MapKit
 import SwiftUI
-import CoreLocation
+
 import Foundation
 
 struct MyPlacesView: View {
     @Binding var myPlaces: [MKPointAnnotation]
+    
 
     var body: some View {
         NavigationView {

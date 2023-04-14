@@ -9,7 +9,6 @@
 import SwiftUI
 import MapKit
 import Foundation
-import CoreLocation
 import CoreData
 
 struct ContentView: View {
@@ -81,9 +80,13 @@ struct ContentView: View {
                                         Image(systemName: "heart.fill")
                                             .foregroundColor(isSaved ? .green : .orange)
                                             .font(.title)
+                                            
+                                            
                                     }
+                                    .foregroundColor(Color.pink)
                                     .padding(.trailing)
                                     .disabled(selectedPlace == nil) // Disable the button if no location is selected
+                                    .modifier(customViewModifier(roundedCornes: 50, startColor: .blue, endColor: .green, textColor: .white))
                                     }
                                 Spacer()
                             }

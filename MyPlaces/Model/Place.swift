@@ -5,18 +5,26 @@
 //  Created by Katlynn Davis on 3/31/23.
 //
 
-import MapKit
-import SwiftUI
-import CoreLocation
-import Foundation
-
-
-/// First: Use this struct throughout your app
-///
-
-struct Place: Identifiable {
-    let id = UUID()
-    let name: String
-    let latitude: Double
-    let longitude: Double
-}
+//import MapKit
+//import SwiftUI
+//import CoreLocation
+//import Foundation
+//
+//
+//struct Place: Identifiable, Equatable {
+//    let name: String = ""
+//    let cityName: String = ""
+//    let coordinates: CLLocationCoordinate2D
+//    let description: String
+//    let link: String
+//    let imageNames: [String]
+//    
+//    
+//    var id: String {
+//        name + cityName
+//    }
+//    
+//    static func == (lhs: Place, rhs: Place) -> Bool {
+//        lhs.id == rhs.id
+//    }
+//}

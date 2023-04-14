@@ -7,8 +7,8 @@
 
 import Foundation
 import CoreData
-
-
+//
+//
 class DataController: ObservableObject {
     let container = NSPersistentContainer(name: "MyPlaces")
     
@@ -21,8 +21,8 @@ class DataController: ObservableObject {
         }
     }
 }
-
-    
-  
-
-   
+//
+//    
+//  
+//
+//   

@@ -15,7 +15,10 @@ struct MapView: UIViewRepresentable {
     @Binding var showingDetail: Bool
     @State private var savedPlaces = Set<String>() // Store coordinates of saved places
     @State private var isSaved = false
-
+    
+    let viewModel = MapViewModel()
+    
+    
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
@@ -76,14 +79,11 @@ struct MapView: UIViewRepresentable {
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
             let identifier = "Placemark"
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-
             if annotationView == nil {
                 annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 annotationView?.canShowCallout = true
-                let button = UIButton(type: .detailDisclosure)
-//                button.setImage(UIImage(systemName: "heart"), for: .normal)
-                button.addTarget(self, action: #selector(addToMyPlaces), for: .touchUpInside)
-                annotationView?.rightCalloutAccessoryView = button
+                annotationView?.image = UIImage(named: "pin")
+                            
             } else {
                 annotationView?.annotation = annotation
             }
